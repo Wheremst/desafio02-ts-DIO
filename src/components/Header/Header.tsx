@@ -1,9 +1,26 @@
-import './Header.css'
+import { 
+  Flex,
+  Heading
+} from '@chakra-ui/react'
 
-export const Header  = () => {
+interface IHeader {
+  nomeDaEmpresa: string;
+}
+
+export const Header  = ({nomeDaEmpresa}: IHeader) => {
   return(
-    <div className='header'>
-      Dio Bank
-    </div>
+    <Flex 
+      as="header" 
+      bg="white" 
+      color="black" 
+      p={5} 
+      align="center" 
+      justify="center"
+      boxShadow="sm"
+    >
+      <Heading as="h1" size="lg">
+        {nomeDaEmpresa}
+      </Heading>
+    </Flex>
   )
 }
